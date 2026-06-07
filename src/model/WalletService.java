@@ -14,7 +14,7 @@ public class WalletService {
         walletList.add(transaction);
     }
 
-    public void getTransactions(){
+    public void printTransactions(){
         for (int i = 0; i < walletList.size(); i++){
             System.out.println(walletList.get(i));
         }
@@ -31,6 +31,15 @@ public class WalletService {
             }
             return balance;
 
+    }
+
+
+    public int getSize(){
+        return walletList.size();
+    }
+
+    public void printLastTransactionInfo() {
+        System.out.println(walletList.get(walletList.size()-1).toString());
     }
 
 }

@@ -60,13 +60,15 @@ public class ConsolUI {
                     walletService.addTransaction(transaction);
                     break;
                 case 2:
-
+                    System.out.println("Список транзакций: ");
+                    walletService.printTransactions();
                     break;
                 case 3:
-
+                    System.out.println("Баланс: " + walletService.getBalance());
                     break;
                 case 4:
-
+                    System.out.println("Последняя добавленная транзакция: ");
+                    walletService.printLastTransactionInfo();
                     break;
                 case 5:
                     running = false;
