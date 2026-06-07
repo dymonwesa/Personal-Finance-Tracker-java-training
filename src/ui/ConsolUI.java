@@ -1,5 +1,6 @@
 package ui;
 
+import model.Category;
 import model.Transaction;
 import model.Type;
 import model.WalletService;
@@ -42,7 +43,18 @@ public class ConsolUI {
                     System.out.println("Введите сумму транзакции: ");
                     transaction.setAmount(scanner.nextInt());
 
-                    System.out.println();
+                    System.out.println("Выберите категорию транзакции: \n1. Еда \n2. Транспорт \n3. Обучение \n4. Отдых");
+                    int choiceCategory = scanner.nextInt();
+                    switch (choiceCategory){
+                        case 1-> transaction.setCategory(Category.FOOD);
+                        case 2-> transaction.setCategory(Category.TRANSPORT);
+                        case 3-> transaction.setCategory(Category.LEARNING);
+                        case 4-> transaction.setCategory(Category.RELAXING);
+                    }
+                    scanner.nextLine();
+                    System.out.println("Добавьте описание транзакции: ");
+                    String inputDescription = scanner.nextLine();
+                    transaction.setDescription(inputDescription);
 
 
                     walletService.addTransaction(transaction);
